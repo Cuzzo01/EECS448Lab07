@@ -1,0 +1,8 @@
+Bugs:
+
+- addBack adds the passed value to the front, not the back
+- isEmpty is true even after a value is added
+- removeFront returns false even if the list has values in it, and does not
+  remove any values from the list
+- removeBack does the same thing removeFront does
+- search seems to always return true, no matter the value passed
