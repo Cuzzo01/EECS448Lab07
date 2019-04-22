@@ -33,9 +33,7 @@ bool Test::testIsEmpty() {
     cout << "\tERROR: List with 1 element is empty.\n";
     toReturn = false;
   }
-  printList(listToTest);
   listToTest.removeFront();
-  printList(listToTest);
   if (!listToTest.isEmpty()) {
     cout << "\tERROR: List after element is removed is not empty.\n";
     toReturn = false;
@@ -141,18 +139,18 @@ bool Test::testAddandRemove() {
 bool Test::testSearch() {
   bool toReturn = true;
   LinkedListOfInts listToTest = LinkedListOfInts();
-  if (!listToTest.search(1)) {
-    cout << "\tError: Element found in empty list.\n";
+  if (listToTest.search(1) == true) {
+    cout << "\tERROR: Element found in empty list.\n";
     toReturn = false;
   }
   for (int i = 0; i < 10; i++) {
     listToTest.addFront(i);
-    if (!listToTest.search(i)) {
+    if (listToTest.search(i) == false) {
       cout << "\tERROR: Element just added to list not found by search.\n";
       toReturn = false;
     }
-    if (!listToTest.search(i+1)) {
-      cout << "\tError: Element not yet added to list was found in list.\n";
+    if (listToTest.search(i+1) == true) {
+      cout << "\tERROR: Element not yet added to list was found in list.\n";
       toReturn = false;
     }
   }

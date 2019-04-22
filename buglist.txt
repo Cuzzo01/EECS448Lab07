@@ -5,4 +5,3 @@ Bugs:
 - removeFront returns false even if the list has values in it, and does not
   remove any values from the list
 - removeBack does the same thing removeFront does
-- search seems to always return true, no matter the value passed
